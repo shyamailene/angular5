@@ -2,6 +2,9 @@
   "name": "pk2-angular",
   "version": "1.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "8.9.4"
+  }  
   "scripts": {
     "heroku-prebuild": "npm install -g http-server",
 	"heroku-postbuild": "ng build --prod",
