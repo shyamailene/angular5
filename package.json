@@ -2,9 +2,6 @@
   "name": "pk2-angular",
   "version": "1.0.0",
   "license": "MIT",
-  "engines": {
-    "node": "8.9.4"
-  },  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
