@@ -10,7 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
+    { path: 'home',             component: HomeComponent, pathMatch: 'full' },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
