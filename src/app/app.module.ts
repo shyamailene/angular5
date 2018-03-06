@@ -12,6 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
+import { QuotesComponent } from './quotes/quotes.component';
 
 import { HomeModule } from './home/home.module';
 
@@ -20,6 +22,8 @@ import { HomeModule } from './home/home.module';
     AppComponent,
     SignupComponent,
     LandingComponent,
+	LogoComponent,
+	QuotesComponent,
     ProfileComponent,
     NavbarComponent,
     FooterComponent
