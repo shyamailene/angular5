@@ -12,6 +12,6 @@ export class DataService {
   constructor(private _htc:HttpClient) { }
 	saveContactUs(contactus: ContactUs) {
         let body = JSON.stringify(contactus);
-        return this._htc.post('http://localhost:8080/api/contactuses', body, httpOptions);
+        return this._htc.post('https://shaktiapp.herokuapp.com/api/contactuses', body, httpOptions);
     }  
 }
