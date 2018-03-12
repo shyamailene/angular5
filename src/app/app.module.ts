@@ -15,8 +15,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import { QuotesComponent } from './quotes/quotes.component';
+import { AlertComponent } from './_directives/index';
 
 import { HomeModule } from './home/home.module';
+
+import { AlertService } from './_services/index';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { HomeModule } from './home/home.module';
 	QuotesComponent,
     ProfileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+	AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { HomeModule } from './home/home.module';
 	HttpClientModule,
     HomeModule
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

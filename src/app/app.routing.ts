@@ -19,7 +19,8 @@ const routes: Routes =[
 	{ path: 'logo',          	component: LogoComponent },
 	{ path: 'quotes',          	component: QuotesComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+	{ path: '**', redirectTo: '' }
 ];
 
 @NgModule({
