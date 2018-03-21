@@ -5,11 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home.component';
-
-import { ComponentsModule } from '../components/components.module';
-import { OurstoryModule } from '../ourstory/ourstory.module';
-import { ExecutiveModule } from '../executive/executive.module';
+import { ExecutiveComponent } from './executive.component';
 
 @NgModule({
     imports: [
@@ -17,13 +13,10 @@ import { ExecutiveModule } from '../executive/executive.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-		NgbModule,
-        ComponentsModule,
-		ExecutiveModule,
-		OurstoryModule
+		NgbModule
     ],
-    declarations: [ HomeComponent ],
-    exports:[ HomeComponent ],
+    declarations: [ ExecutiveComponent ],
+    exports:[ ExecutiveComponent ],
     providers: []
 })
-export class HomeModule { }
+export class ExecutiveModule { }
