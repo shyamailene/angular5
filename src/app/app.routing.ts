@@ -9,6 +9,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LogoComponent } from './logo/logo.component';
 import { OurstoryComponent } from './ourstory/ourstory.component';
+import { EventsComponent } from './events/events.component';
+import { PartnersComponent } from './partners/partners.component';
 import { ExecutiveComponent } from './executive/executive.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
@@ -20,7 +22,9 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
 	{ path: 'logo',          	component: LogoComponent },
 	{ path: 'ourstory',         component: OurstoryComponent },
-	{ path: 'executive',         component: ExecutiveComponent },	
+	{ path: 'events',         	component: EventsComponent },
+	{ path: 'partners',         component: PartnersComponent },
+	{ path: 'executive',        component: ExecutiveComponent },	
 	{ path: 'quotes',          	component: QuotesComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }

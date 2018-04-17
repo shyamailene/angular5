@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
+import { EventsComponent } from './events/events.component';
+import { PartnersComponent } from './partners/partners.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { AlertComponent } from './_directives/index';
 
@@ -27,6 +29,8 @@ import { AlertService } from './_services/index';
     SignupComponent,
     LandingComponent,
 	LogoComponent,
+	EventsComponent,
+	PartnersComponent,
 	QuotesComponent,
     ProfileComponent,
     NavbarComponent,
