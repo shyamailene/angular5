@@ -5,6 +5,6 @@ export class Partners{
 	  public type: string,
 	  public  description: string,
 	  public  location: string,
-	  public  date: Date
+	  public  date: Date 
   ){}
 }
