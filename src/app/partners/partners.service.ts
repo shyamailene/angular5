@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Partners} from "./Partners";
+import {Partners} from "./partners";
 import {Observable} from "rxjs/Observable";
 
 const httpOptions = {
