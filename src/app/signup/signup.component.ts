@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
 		this.register={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
 	}
 	
-    private subscribeToSaveResponse(result: Observable<Register>) {
+    private subscribeToSaveResponse(result: Observable<any>) {
         result.subscribe((res: Register) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
