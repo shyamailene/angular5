@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng4LoadingSpinnerModule, Ng4LoadingSpinnerService  } from 'ng4-loading-spinner';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -40,6 +41,7 @@ import { AlertService } from './_services/index';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+	Ng4LoadingSpinnerModule.forRoot(),
     FormsModule,
     RouterModule,
     AppRoutingModule,
