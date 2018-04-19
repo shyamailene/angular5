@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "heroku-prebuild": "npm install --save-dev webpack webpack-cli html-webpack-plugin webpack-dev-server webpack-dev-middleware",
     "heroku-prebuild": "npm install -g http-server",
-    "heroku-postbuild": "ng build --prod --aot --no-progress",
+    "heroku-postbuild": "ng build --prod",
     "start": "http-server dist/",
     "build": "ng build",
     "test": "ng test",
