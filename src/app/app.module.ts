@@ -41,7 +41,7 @@ import { AlertService } from './_services/index';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-	Ng4LoadingSpinnerModule,
+	Ng4LoadingSpinnerModule.forRoot(),
     FormsModule,
     RouterModule,
     AppRoutingModule,
