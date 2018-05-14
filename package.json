@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "heroku-prebuild": "npm install html-webpack-plugin webpack webpack-dev-server webpack-cli webpack-dev-middleware -g http-server; npm link webpack",
+    "heroku-prebuild": "npm install -g http-server",
     "heroku-postbuild": "ng build --prod",
     "start": "http-server dist/",
     "build": "ng build",
