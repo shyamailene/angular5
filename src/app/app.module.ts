@@ -22,7 +22,7 @@ import { AlertComponent } from './_directives/index';
 import { HomeModule } from './home/home.module';
 
 import { AlertService } from './_services/index';
-
+import { IsSecureGuard } from './app.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ import { AlertService } from './_services/index';
 	HttpClientModule,
     HomeModule
   ],
-  providers: [AlertService],
+  providers: [IsSecureGuard, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
