@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
         this.isSaving = false;
         //this.activeModal.dismiss(result);
 		
-		this.register={firstName:null,email:null,phone:null,lastName:null,younger:true,id:null,parentFName:null,parentLName:null,parentEmail:null,parentPhone:null,line1:null,line2:null,city:null,state:null,country:null,zipcode:null,school:null;grade:null};
+		this.register={firstName:null,email:null,phone:null,lastName:null,younger:true,id:null,parentFName:null,parentLName:null,parentEmail:null,parentPhone:null,line1:null,line2:null,city:null,state:null,country:null,zipcode:null,school:null,grade:null};
     }
 	
 
