@@ -15,7 +15,7 @@ declare let paypal: any;
 	providers: [RegisterService]
 })
 export class SignupComponent implements OnInit {
-	register:Register ={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
+	register:Register ={firstName:null,email:null,phone:null,lastName:null,younger:true,id:null,parentFName:null,parentLName:null,parentEmail:null,parentPhone:null,line1:null,line2:null,city:null,state:null,country:null,zipcode:null,school:null,grade:null};
 	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,signup:null};
 	 
 	message:String='';
@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
         this.isSaving = false;
         //this.activeModal.dismiss(result);
 		
-		this.register={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
+		this.register={firstName:null,email:null,phone:null,lastName:null,younger:true,id:null,parentFName:null,parentLName:null,parentEmail:null,parentPhone:null,line1:null,line2:null,city:null,state:null,country:null,zipcode:null,school:null;grade:null};
     }
 	
 
