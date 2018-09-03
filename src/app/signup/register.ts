@@ -5,6 +5,8 @@ export class Register{
 	  public  lastName: string,
 	  public  phone: string,
 	  public  email: string,
+	  public  school: string,
+	  public  grade: string,
 	  public  line1: string,
 	  public  line2: string,
 	  public  city: string,

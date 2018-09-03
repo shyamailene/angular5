@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RegisterService} from "./register.service";
 import { Response } from '@angular/http';
 import {Register} from "./register";
+import { Payment } from "./payment";
 import { Observable } from 'rxjs/Rx';
 import { AlertService } from '../_services/index';
 
@@ -15,6 +16,8 @@ declare let paypal: any;
 })
 export class SignupComponent implements OnInit {
 	register:Register ={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
+	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,signup:null};
+	 
 	message:String='';
 	isSaving: boolean;
     test : Date = new Date();
@@ -31,15 +34,31 @@ export class SignupComponent implements OnInit {
 		//this._data.saveRegister(this.register).subscribe(b => this.result = b);
 		this.subscribeToSaveResponse(
                 this._data.saveRegister(this.register));		
-		
-		
-		this.register={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
 	}
 	
     private subscribeToSaveResponse(result: Observable<Register>) {
         result.subscribe((res: Register) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
+	
+	private subscribeToSavePayment(result: Observable<Payment>) {
+        result.subscribe((pay: Payment) =>
+            this.onPaymentSaveSuccess(pay), (pay: Response) => this.onSaveError());
+    }
+	
+    private onPaymentSaveSuccess(result: Payment) {
+        //this.eventManager.broadcast({ name: 'contactusListModification', content: 'OK'});
+		this.message='Your Payment is Successfully # ('+result.paymentID+')';
+		this.alertService.success(''+this.message);
+		console.log('result id'+ result.id);
+		console.log('result id'+ JSON.stringify(result));
+		this.payment = result;
+        this.isSaving = false;
+        //this.activeModal.dismiss(result);
+		
+		this.register={firstName:'',email:'',phone:'',lastName:'',younger:true,id:null,parentFName:'',parentLName:'',parentEmail:'',parentPhone:'',line1:'',line2:'',city:'',state:'',country:'',zipcode:''};
+    }
+	
 
     private onSaveSuccess(result: Register) {
         //this.eventManager.broadcast({ name: 'contactusListModification', content: 'OK'});
@@ -47,9 +66,15 @@ export class SignupComponent implements OnInit {
 		this.alertService.success(''+this.message);
 		console.log('result id'+ result.id);
 		console.log('result id'+ JSON.stringify(result));
-		//this.register = result;
+		this.register = result;
         this.isSaving = false;
         //this.activeModal.dismiss(result);
+		this.payment.signup=this.register;
+		delete this.payment["intent"];
+		delete this.payment["returnUrl"];
+		console.log(this.payment);
+		this.subscribeToSavePayment(
+                this._data.savePayment(this.payment));		
     }
 
     private onSaveError() {
@@ -60,20 +85,20 @@ export class SignupComponent implements OnInit {
   addScript: boolean = false;
   paypalLoad: boolean = true;
   
-  finalAmount: number = 1;
+  finalAmount: number = 20;
 
   paypalConfig = {
     env: 'sandbox',
     client: {
-      sandbox: 'Ad_-a7RjjbEI0tTY1rkm1BR2Z-8UZ-ndlRo0wMyw85oiQmVljRHBq3FR_FrE6C_IB7Ww9ezI90ORHxTO',
-      production: '<your-production-key-here>'
+      sandbox: 'AVyA0UcLK7XcagDmryU_IX0QqMv2ze6cJkoycuYz8mAfqLUHmgEHo0_kYrDznNwAbxC58HK86XgRBk4L',
+      production: 'AVWTAaiuFd9jz2Zc-6Eot9hQnyj1nwfi1b89nKx2c6P0yKkbbjhfk9VZI1eKmCQIUM1xJbKIJM05euUj'
     },
     commit: true,
     payment: (data, actions) => {
       return actions.payment.create({
         payment: {
           transactions: [
-            { amount: { total: this.finalAmount, currency: 'INR' } }
+            { amount: { total: this.finalAmount, currency: 'USD' } }
           ]
         }
       });
@@ -82,7 +107,9 @@ export class SignupComponent implements OnInit {
       return actions.payment.execute().then((payment) => {
 		  console.log(payment);
 		  console.log(data);
-		  alert('test');
+		  console.log('OnAuthorize'+JSON.stringify(data));
+		  this.payment = data;
+		  this.insert();
         //Do something when payment is successful.
       }).catch(function(err) {
 		  console.error('execute error:', err);
@@ -98,7 +125,7 @@ export class SignupComponent implements OnInit {
   ngAfterViewChecked(): void {
     if (!this.addScript) {
       this.addPaypalScript().then(() => {
-        //paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
+        paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
         this.paypalLoad = false;
       })
     }
