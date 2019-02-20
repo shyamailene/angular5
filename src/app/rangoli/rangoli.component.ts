@@ -15,7 +15,7 @@ declare let paypal: any;
 	providers: [RangoliService]
 })
 export class RangoliComponent implements OnInit {
-	rangoli:Rangoli ={name:null,email:null,phone:null,age:null,email2:true,id:null,volunteer:null,interested:null,address:null};
+	rangoli:Rangoli ={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
 	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,rangoli:null};
 	 
 	message:String='';
@@ -30,7 +30,7 @@ export class RangoliComponent implements OnInit {
 		return this.age;
 	}
 	insert(){
-		console.log('insert'+this.rangoli.firstName);
+		console.log('insert'+this.rangoli.name);
 		//this._data.saveRangoli(this.rangoli).subscribe(b => this.result = b);
 		this.subscribeToSaveResponse(
                 this._data.saveRangoli(this.rangoli));		
@@ -56,7 +56,7 @@ export class RangoliComponent implements OnInit {
         this.isSaving = false;
         //this.activeModal.dismiss(result);
 		
-		this.rangoli={firstName:null,email:null,phone:null,lastName:null,younger:true,id:null,parentFName:null,parentLName:null,parentEmail:null,parentPhone:null,line1:null,line2:null,city:null,state:null,country:null,zipcode:null,school:null,grade:null};
+		this.rangoli={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
     }
 	
 
