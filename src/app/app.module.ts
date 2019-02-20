@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
+import { RangoliComponent } from './rangoli/rangoli.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ import { AlertService } from './_services/index';
   declarations: [
     AppComponent,
     SignupComponent,
+	RangoliComponent,
     LandingComponent,
 	LogoComponent,
 	EventsComponent,
