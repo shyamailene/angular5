@@ -13,7 +13,6 @@ import { FundraiserComponent } from './fundraiser/fundraiser.component';
 import { HeroFormComponent } from './rangoli/hero-form/hero-form.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
@@ -32,7 +31,6 @@ import { AlertService } from './_services/index';
     SignupComponent,
     RangoliComponent,
     FundraiserComponent,
-    HeroFormComponent,
     LandingComponent,
 	LogoComponent,
 	EventsComponent,
