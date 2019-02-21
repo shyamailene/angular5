@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { RangoliComponent } from './rangoli/rangoli.component';
 import { FundraiserComponent } from './fundraiser/fundraiser.component';
-import { HeroFormComponent } from './rangoli/hero-form/hero-form.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
