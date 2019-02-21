@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Rangoli} from "./rangoli";
+import {Fundraiser} from "./fundraiser";
 import {Payment} from "./payment";
 import {Observable} from "rxjs/Observable";
 
@@ -9,12 +9,12 @@ const httpOptions = {
 };
  
 @Injectable()
-export class RangoliService {
+export class FundraiserService {
   constructor(private _htc:HttpClient) { }
-	saveRangoli(rangoli: Rangoli) {
-        let body = JSON.stringify(rangoli);
+	saveFundraiser(fundraiser: Fundraiser) {
+        let body = JSON.stringify(fundraiser);
 		console.log(body);
-        return this._htc.post('https://shaktiapp.herokuapp.com/api/rangolis', body, httpOptions);
+        return this._htc.post('https://shaktiapp.herokuapp.com/api/fundraisers', body, httpOptions);
     }  
 	savePayment(payment: Payment) {
         let body = JSON.stringify(payment);

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { RangoliComponent } from './rangoli/rangoli.component';
+import { FundraiserComponent } from './fundraiser/fundraiser.component';
+import { HeroFormComponent } from './rangoli/hero-form/hero-form.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -28,7 +30,9 @@ import { AlertService } from './_services/index';
   declarations: [
     AppComponent,
     SignupComponent,
-	RangoliComponent,
+    RangoliComponent,
+    FundraiserComponent,
+    HeroFormComponent,
     LandingComponent,
 	LogoComponent,
 	EventsComponent,
@@ -43,6 +47,7 @@ import { AlertService } from './_services/index';
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
 	HttpClientModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RangoliService} from "./rangoli.service";
+import {FundraiserService} from "./fundraiser.service";
 import { Response } from '@angular/http';
-import {Rangoli} from "./rangoli";
+import {Fundraiser} from "./fundraiser";
 import { Payment } from "./payment";
 import { Observable } from 'rxjs/Rx';
 import { AlertService } from '../_services/index';
@@ -9,25 +9,25 @@ import { AlertService } from '../_services/index';
 declare let paypal: any;
 
 @Component({
-    selector: 'app-rangoli',
-    templateUrl: './rangoli.component.html',
-    styleUrls: ['./rangoli.component.scss'],
-	providers: [RangoliService]
+    selector: 'app-fundraiser',
+    templateUrl: './fundraiser.component.html',
+    styleUrls: ['./fundraiser.component.scss'],
+	providers: [FundraiserService]
 })
-export class RangoliComponent implements OnInit {
-	rangoli:Rangoli ={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
-	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,rangoli:null};
+export class FundraiserComponent implements OnInit {
+	fundraiser:Fundraiser ={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
+	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,fundraiser:null};
 	message:String='';
 	isSaving: boolean;
     test : Date = new Date();
 	age : boolean = true;
-    constructor(private _data:RangoliService, private alertService: AlertService) { }
+    constructor(private _data:FundraiserService, private alertService: AlertService) { }
 
   ngOnInit() {}
 
   validate() { 
     console.log( "validate method");
-    if(this.rangoli.email==null){
+    if(this.fundraiser.email==null){
       this.alertService.error('Please enter email id.');
       return false;
     }
@@ -37,14 +37,14 @@ export class RangoliComponent implements OnInit {
 		return this.age;
 	}
 	insert(){
-		console.log('insert'+this.rangoli.name);
-		//this._data.saveRangoli(this.rangoli).subscribe(b => this.result = b);
+		console.log('insert'+this.fundraiser.name);
+		//this._data.saveFundraiser(this.fundraiser).subscribe(b => this.result = b);
 		this.subscribeToSaveResponse(
-                this._data.saveRangoli(this.rangoli));		
+                this._data.saveFundraiser(this.fundraiser));		
 	}
 	
-    private subscribeToSaveResponse(result: Observable<Rangoli>) {
-        result.subscribe((res: Rangoli) =>
+    private subscribeToSaveResponse(result: Observable<Fundraiser>) {
+        result.subscribe((res: Fundraiser) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
 	
@@ -63,25 +63,24 @@ export class RangoliComponent implements OnInit {
         this.isSaving = false;
         //this.activeModal.dismiss(result);
 		
-		this.rangoli={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
+		this.fundraiser={name:null,email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null};
     }
 	
 
-    private onSaveSuccess(result: Rangoli) {
+    private onSaveSuccess(result: Fundraiser) {
         //this.eventManager.broadcast({ name: 'contactusListModification', content: 'OK'});
 		this.message='Successfully registered ('+result.id+')';
 		this.alertService.success(''+this.message);
 		console.log('result id'+ result.id);
 		console.log('result id'+ JSON.stringify(result));
-		this.rangoli = result;
-        this.isSaving = false;
-        //this.activeModal.dismiss(result);
-		this.payment.rangoli=this.rangoli;
-		delete this.payment["intent"];
-		delete this.payment["returnUrl"];
-		console.log(this.payment);
-		this.subscribeToSavePayment(
-                this._data.savePayment(this.payment));		
+		this.fundraiser = result;
+    this.isSaving = false;
+    //this.activeModal.dismiss(result);
+		//this.payment.fundraiser=this.fundraiser;
+		//delete this.payment["intent"];
+		//delete this.payment["returnUrl"];
+		//console.log(this.payment);
+		//this.subscribeToSavePayment(this._data.savePayment(this.payment));		
     }
 
     private onSaveError() {
@@ -132,8 +131,8 @@ export class RangoliComponent implements OnInit {
   ngAfterViewChecked(): void {
     if (!this.addScript) {
       this.addPaypalScript().then(() => {
-        paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
-        this.paypalLoad = false;
+        //paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
+        //this.paypalLoad = false;
       })
     }
   }
