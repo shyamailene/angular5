@@ -23,7 +23,6 @@ export class FundraisersComponent implements OnInit {
   constructor(private _data:FundraiserService, private alertService: AlertService) { }
 
   ngOnInit() {
-    console.log('test');
     this.fetch();
   }
 

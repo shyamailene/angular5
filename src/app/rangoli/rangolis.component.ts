@@ -23,7 +23,6 @@ export class RangolisComponent implements OnInit {
   constructor(private _data:RangoliService, private alertService: AlertService) { }
 
   ngOnInit() {
-    console.log('test');
     this.fetch();
   }
 

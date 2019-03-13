@@ -23,6 +23,6 @@ export class FundraiserService {
     }  
 	getFundraisers() {
 		console.log('get fundraiser list');
-        return this._htc.get('http://localhost:8080/api/fundraisers', httpOptions);
+        return this._htc.get('https://shaktiapp.herokuapp.com/api/fundraisers', httpOptions);
     }  
 }

@@ -23,6 +23,6 @@ export class RangoliService {
     }  
 	getRangolis() {
 		console.log('get rangolis');
-        return this._htc.get('http://localhost:8080/api/rangolis', httpOptions);
+        return this._htc.get('https://shaktiapp.herokuapp.com/api/rangolis', httpOptions);
     }  
 }
