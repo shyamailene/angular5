@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FundraiserService} from "./fundraiser.service";
 import { Response } from '@angular/http';
 import {Fundraiser} from "./fundraiser";
@@ -14,7 +14,7 @@ declare let paypal: any;
     styleUrls: ['./fundraiser.component.scss'],
 	providers: [FundraiserService]
 })
-export class FundraisersComponent implements OnInit, AfterViewInit  {
+export class FundraisersComponent implements OnInit {
 	message:String='';
 	isSaving: boolean;
     test : Date = new Date();
@@ -49,9 +49,5 @@ export class FundraisersComponent implements OnInit, AfterViewInit  {
     this.isSaving = false;
     this.fundraiserList=[{name:'test',email:'email@s.com',phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null},{name:'test',email:null,phone:null,age:null,email2:null,id:null,volunteer:null,interested:null,address:null}]
     console.log(this.fundraiserList);
-  }
-  
-  public ngAfterViewInit(){
-    this.fetch();
   }
 }

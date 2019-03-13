@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {RangoliService} from "./rangoli.service";
 import { Response } from '@angular/http';
 import {Rangoli} from "./rangoli";
@@ -14,7 +14,7 @@ declare let paypal: any;
     styleUrls: ['./rangoli.component.scss'],
 	providers: [RangoliService]
 })
-export class RangolisComponent implements OnInit, AfterViewInit  {
+export class RangolisComponent implements OnInit {
 	message:String='';
 	isSaving: boolean;
     test : Date = new Date();
@@ -51,7 +51,4 @@ export class RangolisComponent implements OnInit, AfterViewInit  {
     console.log(this.rangolisList);
   }
   
-  public ngAfterViewInit(){
-    this.fetch();
-  }
 }
