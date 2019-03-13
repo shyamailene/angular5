@@ -26,6 +26,8 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 npm install -g @angular/cli
 
+ng build
+
 ng serve --open
 
 

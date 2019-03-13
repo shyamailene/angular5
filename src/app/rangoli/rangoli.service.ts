@@ -21,4 +21,8 @@ export class RangoliService {
 		console.log(body);
         return this._htc.post('https://shaktiapp.herokuapp.com/api/payments', body, httpOptions);
     }  
+	getRangolis() {
+		console.log('get rangolis');
+        return this._htc.get('http://localhost:8080/api/rangolis', httpOptions);
+    }  
 }

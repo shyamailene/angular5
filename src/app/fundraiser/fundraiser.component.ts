@@ -19,8 +19,8 @@ export class FundraiserComponent implements OnInit {
 	payment:Payment = {id:null,paymentToken:null,orderID:null,payerID:null,paymentID:null,fundraiser:null};
 	message:String='';
 	isSaving: boolean;
-    test : Date = new Date();
-	age : boolean = true;
+  test : Date = new Date();
+  age : boolean = true;
     constructor(private _data:FundraiserService, private alertService: AlertService) { }
 
   ngOnInit() {}
@@ -42,11 +42,11 @@ export class FundraiserComponent implements OnInit {
 		this.subscribeToSaveResponse(
                 this._data.saveFundraiser(this.fundraiser));		
 	}
-	
-    private subscribeToSaveResponse(result: Observable<Fundraiser>) {
-        result.subscribe((res: Fundraiser) =>
-            this.onSaveSuccess(res), (res: Response) => this.onSaveError());
-    }
+
+  private subscribeToSaveResponse(result: Observable<Fundraiser>) {
+      result.subscribe((res: Fundraiser) =>
+          this.onSaveSuccess(res), (res: Response) => this.onSaveError());
+  }
 	
 	private subscribeToSavePayment(result: Observable<Payment>) {
         result.subscribe((pay: Payment) =>

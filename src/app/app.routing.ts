@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { RangoliComponent } from './rangoli/rangoli.component';
+import { RangolisComponent } from './rangoli/rangolis.component';
 import { FundraiserComponent } from './fundraiser/fundraiser.component';
+import { FundraisersComponent } from './fundraiser/fundraisers.component';
 import { LandingComponent } from './landing/landing.component';
 import { LogoComponent } from './logo/logo.component';
 import { OurstoryComponent } from './ourstory/ourstory.component';
@@ -22,7 +24,9 @@ const routes: Routes =[
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
   { path: 'rangoli',           component: RangoliComponent },
+  { path: 'rangolis',           component: RangolisComponent },
   { path: 'fundraiser',           component: FundraiserComponent },
+  { path: 'fundraisers',           component: FundraisersComponent },
     { path: 'landing',          component: LandingComponent },
 	{ path: 'logo',          	component: LogoComponent },
 	{ path: 'ourstory',         component: OurstoryComponent },

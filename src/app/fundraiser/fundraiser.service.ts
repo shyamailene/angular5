@@ -21,4 +21,8 @@ export class FundraiserService {
 		console.log(body);
         return this._htc.post('https://shaktiapp.herokuapp.com/api/payments', body, httpOptions);
     }  
+	getFundraisers() {
+		console.log('get fundraiser list');
+        return this._htc.get('http://localhost:8080/api/fundraisers', httpOptions);
+    }  
 }

@@ -9,7 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { RangoliComponent } from './rangoli/rangoli.component';
+import { RangolisComponent } from './rangoli/rangolis.component';
 import { FundraiserComponent } from './fundraiser/fundraiser.component';
+import { FundraisersComponent } from './fundraiser/fundraisers.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -29,7 +31,9 @@ import { AlertService } from './_services/index';
     AppComponent,
     SignupComponent,
     RangoliComponent,
+    RangolisComponent,
     FundraiserComponent,
+    FundraisersComponent,
     LandingComponent,
 	LogoComponent,
 	EventsComponent,
